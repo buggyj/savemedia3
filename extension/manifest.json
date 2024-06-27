@@ -1,0 +1,38 @@
+{
+    "name": "SaveMedia3",
+    "version": "1",
+    "manifest_version": 3,
+     
+     "action": {
+      "default_icon": {
+         "48": "csaver48.png"
+      },
+      "default_popup": "popup.html"
+   },
+    "icons": {
+
+		"16": "csaver16.png",
+		"48": "csaver48.png"
+	},
+    "content_scripts" : [ {
+		"js" : [
+			"contentscript.js"
+		],
+      "matches" : [
+        "file:///*"
+      ],
+		"run_at" : "document_start"
+	} ],
+    "background": {
+            "service_worker": "background.js",
+            "scripts": ["background.js"]
+    },
+  "options_ui": {
+    "page": "options.html"
+  },
+     "short_name": "csaver",
+    "permissions": [
+		"storage" ,
+        "downloads"
+    ]
+}
